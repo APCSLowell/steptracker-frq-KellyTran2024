@@ -9,14 +9,14 @@ public StepTracker(int minStepsActive){
 days = 0;
 totalSteps = 0;
 activeDays = 0;
- this.minActiveSteps = minActiveSteps;
-}
+ this.minActiveSteps = minStepsActive;
 }
 public void addDailySteps(int steps){
 totalSteps += steps;
-totalDays++;
+days++;
 if (steps >= minActiveSteps) {
  activeDays++;
+}
 }
 public int activeDays(){
 return activeDays;
@@ -24,6 +24,6 @@ return activeDays;
  public double averageSteps(){
 if(days == 0)
 return 0.0;
-return totalSteps / (double) days;
+return (double) totalSteps / days;
     }
 }
